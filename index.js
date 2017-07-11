@@ -70,9 +70,6 @@ function deriveSeeds (docs) {
   const seeds = []
 
   docs
-    // Ignore files that aren't real APIs or data structures
-    // TODO: remove this if we ever move the non-API files out of the api dir
-    .filter(doc => doc.markdown_content.match(/^Process: \[/m) || doc.filename.match('structures'))
     .forEach(doc => {
       // H1 headings define modules and structures
       const moduleHeading = /^# (.*)/
